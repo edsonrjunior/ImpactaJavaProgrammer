@@ -133,7 +133,7 @@ public class DAOMovimentacao {
 	public Connection getConnection() {
 		String url = "jdbc:mysql://localhost:3306/estacionamento";
 		String usuario = "root";
-		String senha = "Imp@ct@";
+		String senha = "";
 
 		try {
 			Connection conexao = DriverManager.getConnection(url, usuario,
