@@ -1,0 +1,24 @@
+CREATE DATABASE `estacionamento` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+CREATE TABLE `tb_movimentacoes` (
+  `placa` varchar(45) DEFAULT NULL,
+  `marca` varchar(45) DEFAULT NULL,
+  `modelo` varchar(45) DEFAULT NULL,
+  `cor` varchar(45) DEFAULT NULL,
+  `data_entrada` datetime DEFAULT NULL,
+  `data_saida` datetime DEFAULT NULL,
+  `valor` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `tb_status` (
+  `id` int(11) NOT NULL,
+  `vagas_ocupadas` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `estacionamento`.`tb_status`
+(`id`,`vagas_ocupadas`)
+VALUES (1,1);

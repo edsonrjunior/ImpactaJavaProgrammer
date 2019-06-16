@@ -4,13 +4,13 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
-	<persistence-unit name="exemplo-jpa"
+	<persistence-unit name="estacionamento-2.0"
 		transaction-type="RESOURCE_LOCAL">
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost/aulajpa" />
+				value="jdbc:mysql://localhost/estacionamento2" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password" value="sa" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />

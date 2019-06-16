@@ -1,7 +1,6 @@
 package br.com.edson.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,8 +13,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import br.com.edson.enums.TipoCliente;
 
@@ -39,18 +36,21 @@ public class Cliente implements Serializable {
 	@Column(name = "ENDERECO")
 	private String endereco;
 
-	@Column(name="TIPO_DE_CLIENTE")
-	private TipoCliente tipoCliente;
+	@Column(name = "TIPO_DE_CLIENTE")
+	private Integer tipoCliente;
 
-	@Column(name = "DATA_VENCIMENTO")
-	@Temporal(value = TemporalType.DATE)
-	private Date dataVencimento;
+	@Column(name = "DIA_VENCIMENTO")
+	private Integer diaVencimento;
 
 	@Column(name = "QUANTIDADE_DE_VAGAS")
 	private Integer quantidadeDeVagas;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
 	private Set<Carro> carros = new HashSet<>();
+
+	public Cliente() {
+		super();
+	}
 
 	public Integer getId() {
 		return id;
@@ -84,12 +84,20 @@ public class Cliente implements Serializable {
 		this.endereco = endereco;
 	}
 
-	public Date getDataVencimento() {
-		return dataVencimento;
+	public Integer getTipoCliente() {
+		return tipoCliente;
 	}
 
-	public void setDataVencimento(Date dataVencimento) {
-		this.dataVencimento = dataVencimento;
+	public void setTipoCliente(Integer tipoCliente) {
+		this.tipoCliente = tipoCliente;
+	}
+
+	public Integer getDiaVencimento() {
+		return diaVencimento;
+	}
+
+	public void setDiaVencimento(Integer diaVencimento) {
+		this.diaVencimento = diaVencimento;
 	}
 
 	public Integer getQuantidadeDeVagas() {
@@ -106,13 +114,6 @@ public class Cliente implements Serializable {
 
 	public void setCarros(Set<Carro> carros) {
 		this.carros = carros;
-	}
-
-	@Override
-	public String toString() {
-		return "Cliente [id=" + id + ", nome=" + nome + ", telefone=" + telefone + ", endereco=" + endereco
-				+ ", dataVencimento=" + dataVencimento + ", quantidadeDeVagas=" + quantidadeDeVagas + ", carros="
-				+ carros + "]";
 	}
 
 }

@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "MOVIMENTACOES")
@@ -25,9 +27,11 @@ public class Movimentacao implements Serializable {
 	private Integer id;
 
 	@Column(name = "ENTRADA")
+	@Temporal(value = TemporalType.DATE)
 	private Date entrada;
 
 	@Column(name = "SAIDA")
+	@Temporal(value = TemporalType.DATE)
 	private Date saida;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
