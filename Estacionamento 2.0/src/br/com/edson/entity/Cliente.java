@@ -14,8 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import br.com.edson.enums.TipoCliente;
-
 @Entity
 @Table(name = "CLIENTES")
 public class Cliente implements Serializable {
@@ -25,7 +23,7 @@ public class Cliente implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
-	private Integer id;
+	private int id;
 
 	@Column(name = "NOME")
 	private String nome;
@@ -37,13 +35,13 @@ public class Cliente implements Serializable {
 	private String endereco;
 
 	@Column(name = "TIPO_DE_CLIENTE")
-	private Integer tipoCliente;
+	private int tipoCliente;
 
 	@Column(name = "DIA_VENCIMENTO")
-	private Integer diaVencimento;
+	private int diaVencimento;
 
 	@Column(name = "QUANTIDADE_DE_VAGAS")
-	private Integer quantidadeDeVagas;
+	private int quantidadeDeVagas;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
 	private Set<Carro> carros = new HashSet<>();
@@ -52,11 +50,11 @@ public class Cliente implements Serializable {
 		super();
 	}
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -84,27 +82,27 @@ public class Cliente implements Serializable {
 		this.endereco = endereco;
 	}
 
-	public Integer getTipoCliente() {
+	public int getTipoCliente() {
 		return tipoCliente;
 	}
 
-	public void setTipoCliente(Integer tipoCliente) {
+	public void setTipoCliente(int tipoCliente) {
 		this.tipoCliente = tipoCliente;
 	}
 
-	public Integer getDiaVencimento() {
+	public int getDiaVencimento() {
 		return diaVencimento;
 	}
 
-	public void setDiaVencimento(Integer diaVencimento) {
+	public void setDiaVencimento(int diaVencimento) {
 		this.diaVencimento = diaVencimento;
 	}
 
-	public Integer getQuantidadeDeVagas() {
+	public int getQuantidadeDeVagas() {
 		return quantidadeDeVagas;
 	}
 
-	public void setQuantidadeDeVagas(Integer quantidadeDeVagas) {
+	public void setQuantidadeDeVagas(int quantidadeDeVagas) {
 		this.quantidadeDeVagas = quantidadeDeVagas;
 	}
 

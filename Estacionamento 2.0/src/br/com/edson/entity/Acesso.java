@@ -9,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.com.edson.enums.TipoAcesso;
-
 @Entity
 @Table(name = "ACESSOS")
 public class Acesso implements Serializable {
@@ -20,7 +18,7 @@ public class Acesso implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
-	private Integer id;
+	private int id;
 
 	@Column(name = "FUNCIONAL")
 	private String funcional;
@@ -32,11 +30,11 @@ public class Acesso implements Serializable {
 	@Column(name = "TIPO_DE_ACESSO")
 	private String tipodeAcesso;
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

@@ -24,7 +24,7 @@ public class Movimentacao implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
-	private Integer id;
+	private int id;
 
 	@Column(name = "ENTRADA")
 	@Temporal(value = TemporalType.DATE)
@@ -37,11 +37,11 @@ public class Movimentacao implements Serializable {
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Carro carro;
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
