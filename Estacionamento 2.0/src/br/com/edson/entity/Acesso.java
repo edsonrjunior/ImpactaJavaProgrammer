@@ -18,7 +18,7 @@ public class Acesso implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
-	private int id;
+	private Integer id;
 
 	@Column(name = "FUNCIONAL")
 	private String funcional;
@@ -30,11 +30,11 @@ public class Acesso implements Serializable {
 	@Column(name = "TIPO_DE_ACESSO")
 	private String tipodeAcesso;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

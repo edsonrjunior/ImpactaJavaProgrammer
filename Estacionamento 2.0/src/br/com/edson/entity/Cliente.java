@@ -23,7 +23,7 @@ public class Cliente implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
-	private int id;
+	private Integer id;
 
 	@Column(name = "NOME")
 	private String nome;
@@ -35,13 +35,13 @@ public class Cliente implements Serializable {
 	private String endereco;
 
 	@Column(name = "TIPO_DE_CLIENTE")
-	private int tipoCliente;
+	private Integer tipoCliente;
 
 	@Column(name = "DIA_VENCIMENTO")
-	private int diaVencimento;
+	private Integer diaVencimento;
 
 	@Column(name = "QUANTIDADE_DE_VAGAS")
-	private int quantidadeDeVagas;
+	private Integer quantidadeDeVagas;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cliente")
 	private Set<Carro> carros = new HashSet<>();
@@ -50,11 +50,11 @@ public class Cliente implements Serializable {
 		super();
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -82,27 +82,27 @@ public class Cliente implements Serializable {
 		this.endereco = endereco;
 	}
 
-	public int getTipoCliente() {
+	public Integer getTipoCliente() {
 		return tipoCliente;
 	}
 
-	public void setTipoCliente(int tipoCliente) {
+	public void setTipoCliente(Integer tipoCliente) {
 		this.tipoCliente = tipoCliente;
 	}
 
-	public int getDiaVencimento() {
+	public Integer getDiaVencimento() {
 		return diaVencimento;
 	}
 
-	public void setDiaVencimento(int diaVencimento) {
+	public void setDiaVencimento(Integer diaVencimento) {
 		this.diaVencimento = diaVencimento;
 	}
 
-	public int getQuantidadeDeVagas() {
+	public Integer getQuantidadeDeVagas() {
 		return quantidadeDeVagas;
 	}
 
-	public void setQuantidadeDeVagas(int quantidadeDeVagas) {
+	public void setQuantidadeDeVagas(Integer quantidadeDeVagas) {
 		this.quantidadeDeVagas = quantidadeDeVagas;
 	}
 

@@ -53,7 +53,6 @@ public class EstacionamentoTest {
 		Date entrada1 = sdf.parse("09/06/2019 09:00:00");
 		Date saida1 = sdf.parse("09/06/2019 18:30:00");
 
-		movimentacao.setId(null);
 		movimentacao.setCarro(carro1);
 		movimentacao.setEntrada(entrada1);
 		movimentacao.setSaida(saida1);

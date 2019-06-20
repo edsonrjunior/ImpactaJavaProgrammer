@@ -18,12 +18,12 @@ public class Vaga implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
-	private int id;
+	private Integer id;
 
 	@Column(name = "QUANTIDADE_DE_VAGAS")
-	private static final int quantidadeDeVagas = 200;
+	private static final Integer quantidadeDeVagas = 200;
 
-	public static int getQuantidadedevagas() {
+	public static Integer getQuantidadedevagas() {
 		return quantidadeDeVagas;
 	}
 
