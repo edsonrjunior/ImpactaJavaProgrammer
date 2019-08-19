@@ -23,6 +23,11 @@ public class Vaga implements Serializable {
 	@Column(name = "QUANTIDADE_DE_VAGAS")
 	private static final Integer quantidadeDeVagas = 200;
 
+	public Vaga() {
+		this.id = null;
+		this.getQuantidadedevagas();
+	}
+
 	public static Integer getQuantidadedevagas() {
 		return quantidadeDeVagas;
 	}

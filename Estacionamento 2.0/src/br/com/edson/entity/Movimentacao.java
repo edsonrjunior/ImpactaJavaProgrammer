@@ -27,11 +27,11 @@ public class Movimentacao implements Serializable {
 	private Integer id;
 
 	@Column(name = "ENTRADA")
-	@Temporal(value = TemporalType.DATE)
+	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date entrada;
 
 	@Column(name = "SAIDA")
-	@Temporal(value = TemporalType.DATE)
+	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date saida;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

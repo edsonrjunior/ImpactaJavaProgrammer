@@ -19,12 +19,22 @@ public class Funcionario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
 	private Integer id;
-	
+
 	@Column(name = "NOME")
 	private String nome;
 
 	@Column(name = "FUNCONAL")
 	private String funcional;
+
+	public Funcionario() {
+
+	}
+
+	public Funcionario(String nome, String funcional) {
+		this.id = null;
+		this.nome = nome;
+		this.funcional = funcional;
+	}
 
 	public String getNome() {
 		return nome;

@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import br.com.edson.enums.TipoCliente;
+
 @Entity
 @Table(name = "CLIENTES")
 public class Cliente implements Serializable {
@@ -35,7 +37,7 @@ public class Cliente implements Serializable {
 	private String endereco;
 
 	@Column(name = "TIPO_DE_CLIENTE")
-	private Integer tipoCliente;
+	private TipoCliente tipoCliente;
 
 	@Column(name = "DIA_VENCIMENTO")
 	private Integer diaVencimento;
@@ -47,7 +49,6 @@ public class Cliente implements Serializable {
 	private Set<Carro> carros = new HashSet<>();
 
 	public Cliente() {
-		super();
 	}
 
 	public Integer getId() {
@@ -82,11 +83,11 @@ public class Cliente implements Serializable {
 		this.endereco = endereco;
 	}
 
-	public Integer getTipoCliente() {
+	public TipoCliente getTipoCliente() {
 		return tipoCliente;
 	}
 
-	public void setTipoCliente(Integer tipoCliente) {
+	public void setTipoCliente(TipoCliente tipoCliente) {
 		this.tipoCliente = tipoCliente;
 	}
 
@@ -110,8 +111,12 @@ public class Cliente implements Serializable {
 		return carros;
 	}
 
-	public void setCarros(Set<Carro> carros) {
-		this.carros = carros;
+	public void addCarro(Carro carro) {
+		carros.add(carro);
+	}
+
+	public void removeCarro(Carro carro) {
+		carros.remove(carro);
 	}
 
 }

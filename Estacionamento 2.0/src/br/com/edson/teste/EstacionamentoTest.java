@@ -12,7 +12,10 @@ import javax.persistence.Persistence;
 
 import br.com.edson.entity.Carro;
 import br.com.edson.entity.Cliente;
+import br.com.edson.entity.Funcionario;
 import br.com.edson.entity.Movimentacao;
+import br.com.edson.entity.Vaga;
+import br.com.edson.enums.TipoCliente;
 
 public class EstacionamentoTest {
 
@@ -27,7 +30,7 @@ public class EstacionamentoTest {
 		cliente1.setNome("Edson");
 		cliente1.setTelefone("948341617");
 		cliente1.setEndereco("Rua dos Pinhais, 123");
-		cliente1.setTipoCliente(1);
+		cliente1.setTipoCliente(TipoCliente.valueOf("MENSALISTA"));
 		cliente1.setDiaVencimento(28);
 		cliente1.setQuantidadeDeVagas(1);
 
@@ -40,12 +43,7 @@ public class EstacionamentoTest {
 		carro1.setCor("Cinza");
 		carro1.setCliente(cliente1);
 
-		// Criando set de Carros
-		Set<Carro> carros1 = new HashSet<Carro>();
-
-		// Add carro ao set e adicionando ao cliente
-		carros1.add(carro1);
-		cliente1.setCarros(carros1);
+		cliente1.addCarro(carro1);
 
 		Movimentacao movimentacao = new Movimentacao();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
@@ -57,12 +55,17 @@ public class EstacionamentoTest {
 		movimentacao.setEntrada(entrada1);
 		movimentacao.setSaida(saida1);
 
-
-
+		Funcionario funcionario1 = new Funcionario("Francisco", "007523905");
+		Vaga vaga = new Vaga();
+		
+		//Salvando no banco de dados
 		em.getTransaction().begin();
 
+		em.persist(vaga);
+		em.persist(funcionario1);
 		em.persist(cliente1);
 		em.persist(carro1);
+		em.persist(movimentacao);
 
 		System.out.println("PRONTO");
 
